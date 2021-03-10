@@ -1,5 +1,5 @@
 name: Continuous Integration
-on: push2
+on: push
 
 jobs:
   unit-test:
