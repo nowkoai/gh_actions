@@ -8,25 +8,39 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2.0.0
+        env:
+            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - name: Set Node.js 12.x
         uses: actions/setup-node@v1.3.0
         with:
           node-version: 12.x
+        env:
+            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - name: Install dependencies
         run: npm ci
+        env:
+            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - name: Test
         run: npm test
+        env:
+            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
   lint:
     name: Lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2.0.0
+        env:
+            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - name: Set Node.js 12.x
         uses: actions/setup-node@v1.3.0
         with:
           node-version: 12.x
+        env:
+            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - name: Install dependencies
         run: npm ci
       - name: Lint
         run: npm run lint
+        env:
+            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
